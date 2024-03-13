@@ -10,13 +10,13 @@ const getTareas = asyncHandler(async (req, res) => {
 
 const createTareas = asyncHandler(async (req, res) => {
 
-    if (!req.body.descripcion) {
+    if (!req.body.description) {
         res.status(400)
         throw new Error('Por favor teclea una descripción')
     }
 
     const tarea = await Tarea.create({
-        descripcion: req.body.descripcion,
+        description: req.body.description,
         user: req.user.id
     })
 
